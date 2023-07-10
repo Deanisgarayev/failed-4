@@ -15,56 +15,56 @@ public class StringListController {
     public StringListController(StringList stringList) {
         this.stringList = stringList;
     }
-    @GetMapping()
+    @GetMapping("/add")
     public String add(@RequestParam String item) {
         return stringList.add(item);
     }
 
-    @GetMapping()
-    public String add(@RequestParam int index, @RequestParam String item) {
+    @GetMapping(value = "/add",params = "index")
+    public String add(@RequestParam("index") int index, @RequestParam String item) {
         return stringList.add(index, item);
     }
-    @GetMapping()
+    @GetMapping("/set")
     public String set(@RequestParam int index, @RequestParam String item) {
         return stringList.set(index, item);
     }
-    @GetMapping()
-    public String remove(@RequestParam String item) {
+    @GetMapping(value = "/remove", params = "item")
+    public String remove(@RequestParam("item") String item) {
         return stringList.remove(item);
     }
-    @GetMapping()
+    @GetMapping("/remove")
     public String remove(@RequestParam int index) {
         return stringList.remove(index);
     }
-    @GetMapping()
+    @GetMapping("/contains")
     public boolean contains(@RequestParam String index) {
         return stringList.contains(index);
     }
-    @GetMapping()
+    @GetMapping("/indexOF")
     public int indexOF(@RequestParam String item) {
         return stringList.indexOF(item);
     }
-    @GetMapping()
+    @GetMapping("/lastIndexOF")
     public int lastIndexOF(@RequestParam String item) {
         return stringList.lastIndexOF(item);
     }
-    @GetMapping()
+    @GetMapping("/get")
     public String get(@RequestParam int index) {
         return stringList.get(index);
     }
-    @GetMapping()
+    @GetMapping("/equals")
     public boolean equals(@RequestParam StringList otherList) {
         return stringList.equals(otherList);
     }
-    @GetMapping()
+    @GetMapping("/isEmpty")
     public boolean isEmpty() {
         return stringList.isEmpty();
     }
-    @GetMapping()
+    @GetMapping("/clear")
     public void clear() {
         stringList.clear();
     }
-    @GetMapping()
+    @GetMapping("/toArray")
     public String[] toArray() {
         return stringList.toArray();
     }
