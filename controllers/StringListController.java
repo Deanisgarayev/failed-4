@@ -56,6 +56,11 @@ public class StringListController {
     public boolean equals(@RequestParam StringList otherList) {
         return stringList.equals(otherList);
     }
+
+    @GetMapping("/size")
+    public int size() {
+        return stringList.size();
+    }
     @GetMapping("/isEmpty")
     public boolean isEmpty() {
         return stringList.isEmpty();
