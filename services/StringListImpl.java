@@ -11,7 +11,6 @@ import java.util.Arrays;
 @Service
 public class StringListImpl implements StringList {
     private final String[] storage;
-
     private int size;
     public StringListImpl() {
         storage = new String[10];
